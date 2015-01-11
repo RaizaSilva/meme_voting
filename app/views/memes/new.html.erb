@@ -1,0 +1,10 @@
+<%= form_for @meme do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name%>
+  </p>
+  <p>
+    <%= form.attachment_field :meme_img %>
+  </p>
+  <%= form.submit %>
+<% end %>

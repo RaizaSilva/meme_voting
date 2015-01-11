@@ -1,0 +1,26 @@
+<style>
+#top {
+    background-color:black;
+    height:30%;
+    width:100%;
+    text-align:center;
+    padding:5px;
+}
+#center {
+    background-color:#eeeeee;
+    width:60%;
+    float:left;
+}
+#sidel {
+    background-color:black;
+    width:20%;
+    float:left;
+}
+
+#sider {
+    background-color:black;
+    width:20%;
+    float:right;
+}
+
+</style>

@@ -1,0 +1,47 @@
+<div id="top">
+  <% if current_user.present? %>
+    <%= current_user.name %>
+    <%= link_to "Logout", destroy_user_session_url, method: :delete %>
+    <%= link_to "New Image", new_photo_url, class: "btn" %>
+  <% else %>
+    <%= link_to "Login", new_user_registration_url %>
+  <% end %>
+  <%= link_to "New meme", new_meme_url, class: "btn" %>
+</div>
+
+<div id="sidel">
+</div>
+
+
+<div id="center">
+    <%= link_to "Mais Recentes", photos_url(more_recent: true), class: "btn" %>
+    <%= link_to "Mais Votados", photos_url(more_voted: true), class: "btn" %>
+
+  <% @photos.each do |img| %>
+    <div>
+        <h3><%= img.photo_name %></h3>
+        <td><%= image_tag attachment_url(img, :photo_img, :fill, 590, 590) %></td>
+        <div id="voting">
+        <% memes  = Meme.where(id: Vote.photo_most_voted(img.id).keys) %>
+             <% if memes.present? %>
+               <% memes[1..3].reverse_each do |meme| %>
+                  <td><%= image_tag attachment_url(meme, :meme_img, :fill, 70, 70) %></td>
+                  <br>
+                  <td><%= meme.name %></td>
+                  <br>
+                  <br>
+               <% end %>
+              <%end%>
+             <br>
+             <% if current_user.present? %>
+                <%= link_to "Votar", new_photo_vote_url(img), class: "btn" %>
+              <% end %>
+        </div>
+    </div>
+    <br>
+  <% end %>
+</div>
+
+
+<div id="sider">
+</div>

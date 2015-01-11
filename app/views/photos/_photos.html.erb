@@ -1,0 +1,20 @@
+<% photos.each do |img| %>
+    <div>
+        <h3><%= img.photo_name %></h3>
+        <td><%= image_tag attachment_url(img, :photo_img, :fill, 590, 590) %></td>
+        <div id="voting">
+             <% @memes.each do |meme| %>
+                <td><%= image_tag attachment_url(meme, :meme_img, :fill, 70, 70) %></td>
+                <br>
+                <td><%= meme.name %></td>
+                <br>
+                <br>
+             <% end %>
+             <br>
+             <% if current_user.present? %>
+                <%= link_to "Votar", new_photo_vote_url(img), class: "btn" %>
+              <% end %>
+        </div>
+    </div>
+    <br>
+  <% end %>
