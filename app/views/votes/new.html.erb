@@ -1,6 +1,8 @@
 <% @memes.each do |meme| %>
   <td>
-    <%= link_to meme.name, photo_vote_url(@photo,meme), method: :patch  %>
-    <%= image_tag attachment_url(meme, :meme_img, :fill, 70, 70) %>
+    &nbsp
+    <div id="meme_listing">
+      <%= link_to (image_tag attachment_url(meme, :meme_img, :fill, 100, 100)), photo_vote_url(@photo,meme), method: :patch  %>
+    </div>
   </td>
 <% end %>

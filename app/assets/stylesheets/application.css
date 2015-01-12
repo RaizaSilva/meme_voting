@@ -14,12 +14,12 @@
  *= require_self
  */
 
-
-<style>
 #top {
     background-color:black;
     height:30%;
-    text-align:center;
+    text-align:left;
+    padding:10px;
+    color:white;
 }
 #center {
     line-height:30px;
@@ -29,9 +29,20 @@
     float:left;
     padding:20px;
 }
+
+#new_img {
+    float:right;
+    width:100px;
+}
+
+#meme_listing {
+    display:inline;
+    
+}
+
 #sidel {
     background-color:white;
-    width:15%;
+    width:20%;
     float:left;
     padding:5px;
     height: 100%;
@@ -55,5 +66,3 @@
     text-align:center;
 }
 
-
-</style>

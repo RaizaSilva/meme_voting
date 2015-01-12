@@ -56,11 +56,4 @@ ActiveRecord::Schema.define(version: 20150111164457) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "votos", force: :cascade do |t|
-    t.integer  "photo_id"
-    t.integer  "meme_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
